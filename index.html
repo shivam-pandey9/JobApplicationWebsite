@@ -1,0 +1,226 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Job Applicaton</title>
+     <link rel="stylesheet" href="index.css">
+ </head>
+ <body>
+    <div class="nav">
+        <img src="logo.png" alt="company logo">
+        <h2>Android Engineer (TL/SSE)</h2>
+        <p>Bengaluru, Karnataka, India <span>&#183;</span> Engineering <span>&#183;</span>Full Time </p>
+    </div> 
+    <hr>
+
+    <div class="content">
+
+    <div class="tab">
+
+
+        <div class="fix">
+            <div class='tab-head'>
+            <button onclick=showPanel(0)><b>Overview</b></button>
+            <button onclick=showPanel(1)><b>Application</b></button>
+            </div>
+        </div>
+
+        <div class="tab-content">
+            
+        <embed src="overview.txt">
+            <br>
+            <br>
+        <button id="apply">Apply for this job</button>
+    
+        </div>
+        <div class="tab-content">
+            <!-- form -->
+            <div class="autofill">Autofill</div>
+            
+            <br>
+            <div class="nt"><sup class="note">*</sup>Required fields</div>
+
+            <form class="form" action="personal.php" method="POST">
+
+               
+                <br>
+                <h4 class="head1">Personal Information</h4>
+                <button class="clear">Clear</button>
+                <br>
+                <hr>
+
+
+                <label for="fname"><div class="head2"><sup class="note">*</sup>First name </div></label>
+                <input type="text" class="inp" name="fname" placeholder="First Name">
+                <br>
+                <br>
+                <label for="lname"><div class="head2"><sup class="note">*</sup>Last name </div></label>
+                <input type="text" class="inp" name="lname" placeholder="Last Name">
+                <br>
+                <br>
+                <label for="email"><div class="head2"><sup class="note">*</sup>Email </div></label>
+                <input type="email" class="inp" name="email" placeholder="Email">
+                <br>
+                <br>
+                <label for="text"><div class="head2"><sup class="note">*</sup>Phone </div></label>
+                <input type="tel" class="inp" name="phone" placeholder="Phone">
+                <br>
+                <br>
+                <label for="location"><div class="head2"><sup class="note">*</sup>Location(City) </div></label>
+                <input type="text" class="inp" name="location" placeholder="Location">
+                 <br>
+                 <br>
+
+
+                 <br>
+                <h4 class="head1">Profile</h4>
+                <button class="clear">Clear</button>
+                <br>
+                <hr>
+
+                <label for="text"><div class="head2"><sup class="note">*</sup>Education</div></label>
+                <button class="inpb edu">+Add</button>
+                <br>
+               <br>
+                <div class="form1">
+                    <!--  -->
+                    <br>
+                <label for="text"><div class="head2"><sup class="note">*</sup>University</div></label>
+                <input type="text" class="inp" name="university" placeholder="University">
+                    <br>
+                    <br>
+                <label for="text"><div class="head2"><sup class="note">*</sup>Field Of Study</div></label>
+                <input type="text" class="inp" name="field" placeholder="">
+                    <br>
+                    <br>
+                <label for="text"><div class="head2"><sup class="note">*</sup>Degree</div></label>
+                <input type="text" class="inp" name="degree" placeholder="Bachelor's/Master's/Phd">
+                    <br>
+                    <br>
+                <label for="text"><div class="head2"><sup class="note">*</sup>Year Of PassOut</div></label>
+                <input type="number" class="inp" name="passout" placeholder="End Year">
+
+                    <br>
+                    <br>
+
+                </div>
+                <br>
+              
+                <label for="text"><div class="head2"><sup class="note">*</sup>Experience</div></label>
+                <button class="inpb exp">+Add</button>
+                <br>
+                <br>
+                <div class="form1">
+                    <!--  -->
+                
+                </div>
+
+                
+                <br>
+                <label for="text"><div class="head2"><sup class="note">*</sup>Total Year of Experience</div></label>
+                <select name="year" class="inp1">
+                    <option value="">Select an Option</option>
+                    <option value="l0">fresher</option>
+                    <option value="l1">0-1</option>
+                    <option value="l2">1-3</option>
+                    <option value="l3">3-5</option>
+                    <option value="l4">5-7</option>
+                    <option value="l5">7-10</option>
+                    <option value="l6">10+</option>
+                </select>
+                <br>
+                <br>
+
+
+
+                <label for="text"><div class="head2"><sup class="note">*</sup>Years of relevant experience</div></label>
+                <input type="text" class="inp" name="experience" placeholder="Experience">
+                <br>
+                <br>
+
+                <label for="text"><div class="head2"><sup class="note">*</sup>Summary</div></label>
+                <textarea name="summary" class="inp cvr" cols="60" ></textarea>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <label for="text"><div class="head2"><sup class="note">*</sup>Resume</div></label>
+                <!-- <textarea name="summary" class="inp cvr" cols="60" ></textarea> -->
+                <br>
+                <br>
+
+
+                <br>
+                <br>
+                <h4 class="head1">Details</h4>
+                <button class="clear">Clear</button>
+                <br>
+                <hr>
+                <label for="text"><div class="head2"><sup class="note">*</sup>Current/Most recent Salary (LAKHS/annum)</div></label>
+                <input type="text" class="inp" name="curSalary" placeholder="Current Salary">
+                <br>
+                <br>
+                <label for="text"><div class="head2"> &nbsp;Variable Salary/Bonus (if applicable)</div></label>
+                <input type="text" class="inp" name="varSalary" placeholder="Variable Salary">
+                <br>
+                <br>
+                <label for="text"><div class="head2"><sup class="note">*</sup>Expected Salary (LAKHS/annum)</div></label>
+                <input type="text" class="inp" name="expSalary" placeholder="Expected Salary">
+                <br>
+                <br>
+                <label for="text"><div class="head2"><sup class="note">*</sup>Notice Period</div></label>
+                <select name="notice" class="inp1">
+                    <option value="">Select an Option</option>
+                    <option value="immediately">immediately</option>
+                    <option value="15 days">15 days</option>
+                    <option value="30 days">30 days</option>
+                    <option value="30+ days">30+ days</option>
+                </select>
+
+                <br>
+                <br>
+                <label for="text"><div class="head2"><sup class="note">*</sup>Cover letter</div></label>
+                <!-- <input type="text" class="inp cvr" name="cover"  > -->
+                <textarea name="cover" class="inp cvr" cols="60" ></textarea>
+
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <input type="submit" name="submit" class="sub" value="Submit Application">
+                <br>
+                <br>
+            </form>
+
+
+        </div>
+
+    </div>
+
+    </div>
+    
+    <br>
+    <br>
+    <br>
+    <div class="footer">
+        <a href="/">View website <span>&#183;</span></a>
+        <a href="/">View all jobs <span>&#183;</span></a>
+        <a href="/">Help</a>
+        <br>
+        <hr>
+        Powered by 
+        <a href="/">Workable <span>&#183;</span></a>
+        <a href="/">Accessibility</span></a>
+    </div>
+
+
+    <script src="index.js"></script>
+    
+ </body>
+ </html>
