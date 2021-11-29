@@ -5,9 +5,12 @@ $username = "root";
 $password = "";
 $dbname="jobApp";
 
+if(isset($_POST['edu'])){
 
+echo "hello";
 
-if(isset($_POST['submit'])){
+}
+else if(isset($_POST['submit'])){
 
     $fname = $_POST['fname'] ;
     $lname = $_POST['lname'];
@@ -71,6 +74,7 @@ else{
 else
 {
     // submit not clicked
+    echo " no input detected";
 }
 
 ?> 

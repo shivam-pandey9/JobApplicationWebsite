@@ -40,19 +40,5 @@ apply.addEventListener('click',function(){
 } );
 
 
-// exp || edu
-var exp = document.getElementsByClassName('exp');
-var edu = document.getElementsByClassName('edu');
-var form1 = document.getElementsByClassName('form1');
+// exp || edu in php
 
-
-console.log('experience ');
-console.log(edu);
-
-function showtab(){
-console.log('done');
-}
-
-edu.addEventListener('click',function(){
-showtab();
-});
