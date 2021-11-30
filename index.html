@@ -118,11 +118,11 @@
                 
                     <br>
                     <label for="text"><div class="head2"><sup class="note">*</sup>Organisation</div></label>
-                    <input type="text" class="inp" name="org" placeholder="Organisation">
+                    <input type="text" class="inp" name="organisation" placeholder="Organisation">
                         <br>
                         <br>
                     <label for="text"><div class="head2"><sup class="note">*</sup>Designation</div></label>
-                    <input type="text" class="inp" name="des" placeholder="your position">
+                    <input type="text" class="inp" name="designation" placeholder="your position">
                         <br>
                         <br>
                     <label for="text"><div class="head2"><sup class="note">*</sup>Summary</div></label>
@@ -145,7 +145,7 @@
                 
                 <br>
                 <label for="text"><div class="head2"><sup class="note">*</sup>Total Year of Experience</div></label>
-                <select name="year" class="inp1">
+                <select name="year-exp" class="inp1">
                     <option value="">Select an Option</option>
                     <option value="l0">fresher</option>
                     <option value="l1">0-1</option>
@@ -161,21 +161,26 @@
 
 
                 <label for="text"><div class="head2"><sup class="note">*</sup>Years of relevant experience</div></label>
-                <input type="text" class="inp" name="experience" placeholder="Experience">
+                <input type="number" class="inp" name="experience" placeholder="Experience">
                 <br>
                 <br>
 
                 <label for="text"><div class="head2"><sup class="note">*</sup>Summary</div></label>
-                <textarea name="summary" class="inp cvr" cols="60" ></textarea>
+                <textarea name="summ" class="inp cvr" cols="60" ></textarea>
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
+
+                <form method="POST" enctype="multipart/form-data">
                 <label for="text"><div class="head2"><sup class="note">*</sup>Resume</div></label>
-              
-                <!-- <button name="choose" class="inp">Choose</button> -->
-                
+                <input type="file" name="fl">
+                <!-- <input type="submit" name="sb" > -->
+                <button type="submit" name="sb">upload</button>
+                </form>
+ 
+
                 <br>
                 <br>
 

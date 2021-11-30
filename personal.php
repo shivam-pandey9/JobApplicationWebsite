@@ -5,12 +5,7 @@ $username = "root";
 $password = "";
 $dbname="jobApp";
 
-if(isset($_POST['edu'])){
-
-echo "hello";
-
-}
-else if(isset($_POST['submit'])){
+if(isset($_POST['submit'])){
 
     $fname = $_POST['fname'] ;
     $lname = $_POST['lname'];
@@ -49,6 +44,33 @@ else{
 echo "Query 1 Failed";
 }
 
+
+$university= $_POST['university'];
+$field= $_POST['field'];
+$degree=$_POST['degree'];
+$passout=$_POST['passout']; //int
+$organisation=$_POST['organisation'];
+$designation=$_POST['designation'];
+$summary=$_POST['summary'];
+$endPass=$_POST['endPass'];
+$year=$_POST['year-exp'];
+$experience=$_POST['experience'];
+$summ=$_POST['summ'];	
+
+$sqlquery = "INSERT INTO profile(university,field,degree,passout,organisation,designation,summary,endPass,yearExp,experience,summ) 
+VALUES('$university','$field','$degree','$passout',	'$organisation','$designation',	'$summary',	'$endPass',	'$year','$experience','$summ') ";
+
+$run = mysqli_query($conn,$sqlquery);
+
+if($run){
+echo "Query 2 Successful";
+}
+else{
+echo "Query 2 Failed";
+}
+
+
+
 $sqlquery = "INSERT INTO detail(curSalary,bonus,expSalary,notice,cover) VALUES('$curSalary','$varSalary','$expSalary','$notice','$cover')";
 // id	fname	lname	email	phone	location	
 $run = mysqli_query($conn,$sqlquery);
@@ -61,6 +83,13 @@ echo "Query 3 Failed";
 }
 
 
+// form upload code - can create a separate file
+
+
+
+
+
+
 
 // $conn->close(); isset($_GET['id']) ? $_GET['id'] : '';
 mysqli_close($conn);
@@ -70,6 +99,45 @@ else{
     die("Connection failed: ".$conn->connect_error);
 }
 
+}
+else if(isset($_POST['sb'])){
+
+    $conn = new mysqli($servername,$username,$password,$dbname);
+
+
+    if($conn){
+
+
+        $pname= $_FILES['fl']['name'];   // rand(1000,10000)."-"
+        $ptype = $_FILES['fl']['type'];
+        $psize = $_FILES['fl']['size'];
+        $upload_dir = 'upload/'.$pname;
+        // $tarf = $upload_dir.basename($_FILES['fl']['name']);
+        // $tname = $_FILES['fl']['tmp_name'];  // temp name
+
+    
+        // if(move_uploaded_file($tname,$upload_dir)){
+
+        //     $sqlquery="INSERT into upload(name,type,size) VALUES('$pname','$ptype','$psize')";
+        //     $run = mysqli_query($conn,$sqlquery);
+        
+        //     if($run){
+        //     echo "Upload - Successful";
+        //     }
+        //     else{
+        //     echo "Upload - Failed";
+        //     }
+        // }
+        // else{
+        //     echo "Upload failed";
+        // }
+
+    }
+    else{
+        echo "Database not Connected";
+    }
+ 
+    
 }
 else
 {
