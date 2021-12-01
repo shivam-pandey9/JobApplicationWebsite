@@ -158,6 +158,7 @@ cursor: pointer;
     color: white;
     font-weight: bold;
     cursor: pointer;
+    display: none;
 }
 
 .cvr{

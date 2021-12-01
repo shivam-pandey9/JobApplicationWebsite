@@ -87,10 +87,6 @@ echo "Query 3 Failed";
 
 
 
-
-
-
-
 // $conn->close(); isset($_GET['id']) ? $_GET['id'] : '';
 mysqli_close($conn);
 }
@@ -100,38 +96,46 @@ else{
 }
 
 }
-else if(isset($_POST['sb'])){
+else if(isset($_POST['sbt'])){
 
     $conn = new mysqli($servername,$username,$password,$dbname);
-
+    
 
     if($conn){
-
-
+        
         $pname= $_FILES['fl']['name'];   // rand(1000,10000)."-"
+        $pname = rand(1000,10000).$pname;
         $ptype = $_FILES['fl']['type'];
         $psize = $_FILES['fl']['size'];
         $upload_dir = 'upload/'.$pname;
-        // $tarf = $upload_dir.basename($_FILES['fl']['name']);
-        // $tname = $_FILES['fl']['tmp_name'];  // temp name
 
-    
-        // if(move_uploaded_file($tname,$upload_dir)){
+        $tname = $_FILES['fl']['tmp_name'];  // temp name
 
-        //     $sqlquery="INSERT into upload(name,type,size) VALUES('$pname','$ptype','$psize')";
-        //     $run = mysqli_query($conn,$sqlquery);
+       
+
+        echo $pname;
+        echo $ptype;
+        echo $psize;
+
+        if(move_uploaded_file($tname,$upload_dir)){  
+
+            $sqlquery="INSERT into upload(name,type,size) VALUES('$pname','$ptype','$psize')";
+            // sudo chmod 777 -R /opt/lampp/htdocs/JobApplication/upload
+            $run = mysqli_query($conn,$sqlquery);
         
-        //     if($run){
-        //     echo "Upload - Successful";
-        //     }
-        //     else{
-        //     echo "Upload - Failed";
-        //     }
-        // }
-        // else{
-        //     echo "Upload failed";
-        // }
+            if($run){
+            echo "Upload query - Successful";
+            }
+            else{ 
+            echo "Upload query - Failed";
+            }
+        } 
+        else{
+            echo "Upload failed";
+        }
 
+
+        mysqli_close($conn);
     }
     else{
         echo "Database not Connected";

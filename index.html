@@ -42,7 +42,7 @@
             <br>
             <div class="nt"><sup class="note">*</sup>Required fields</div>
 
-            <form class="form" action="personal.php" method="POST">
+            <form class="form" action="personal.php" method="POST" enctype="multipart/form-data">
 
                
                 <br>
@@ -172,14 +172,16 @@
                 <br>
                 <br>
                 <br>
+                
+                <div>
+                <!-- <form2 action="personal.php" method="POST" enctype="multipart/form-data"> -->
 
-                <form method="POST" enctype="multipart/form-data">
                 <label for="text"><div class="head2"><sup class="note">*</sup>Resume</div></label>
                 <input type="file" name="fl">
-                <!-- <input type="submit" name="sb" > -->
-                <button type="submit" name="sb">upload</button>
-                </form>
- 
+                <input type="submit" name="sbt" value="upload">
+                <!-- <button type="submit" name="sb">upload</button> -->
+                
+                </div>
 
                 <br>
                 <br>
