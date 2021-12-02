@@ -47,7 +47,10 @@ echo "Query 1 Failed";
 
 $university= $_POST['university'];
 $field= $_POST['field'];
+
 $degree=$_POST['degree'];
+$degree = addslashes($degree);
+
 $passout=$_POST['passout']; //int
 $organisation=$_POST['organisation'];
 $designation=$_POST['designation'];
@@ -57,16 +60,25 @@ $year=$_POST['year-exp'];
 $experience=$_POST['experience'];
 $summ=$_POST['summ'];	
 
-$sqlquery = "INSERT INTO profile(university,field,degree,passout,organisation,designation,summary,endPass,yearExp,experience,summ) 
-VALUES('$university','$field','$degree','$passout',	'$organisation','$designation',	'$summary',	'$endPass',	'$year','$experience','$summ') ";
+$sqlquery = "INSERT INTO profile(university,field,degree,passout,organisation,designation,summary,endPass,yearExp,experience,summ) VALUES('$university','$field','$degree','$passout',	'$organisation','$designation',	'$summary',	'$endPass',	'$year','$experience','$summ')";
+// echo "run calling";
+
 
 $run = mysqli_query($conn,$sqlquery);
+
+// echo $university.$field.$degree.$passout.$organisation.$designation.$summary.$endPass.$year.$experience.$summ ;
+// To check error run below part
+// if (!$conn -> $sqlquery) {
+//     echo("Error description: " . $conn -> error);
+//   }
+
+//  using ' in value caused error
 
 if($run){
 echo "Query 2 Successful";
 }
 else{
-echo "Query 2 Failed";
+echo "Query 2 Failed" ;
 }
 
 
@@ -111,11 +123,6 @@ else if(isset($_POST['sbt'])){
 
         $tname = $_FILES['fl']['tmp_name'];  // temp name
 
-       
-
-        echo $pname;
-        echo $ptype;
-        echo $psize;
 
         if(move_uploaded_file($tname,$upload_dir)){  
 
