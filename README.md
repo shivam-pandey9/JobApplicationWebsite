@@ -1,6 +1,9 @@
 ﻿Created A Sample Webpage for applying for jobs using PHP , Mysql
 
-																												
+![ScreenShot](1.png)
+
+![ScreenShot](2.png)
+
 
 Steps To run the project locally.
 
