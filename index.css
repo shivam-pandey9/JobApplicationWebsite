@@ -189,6 +189,15 @@ cursor: pointer;
     /* display: none; */
 }
 
-.chs{
+.gd{
+    padding: 10px;
+    background-color: cyan;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
     
 }
+
+/* .chs{
+    
+} */
